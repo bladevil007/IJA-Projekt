@@ -735,7 +735,10 @@ public class Gui extends javax.swing.JFrame {
     */
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         // TODO add your handling code here:
-        // store values into the variables  
+        // store values into the variables 
+        if (Ntextfield.getText() == ""){
+            boardsize = 7;
+        }
         try{
                 boardsize = Integer.parseInt(Ntextfield.getText())+2;
                 players = Integer.parseInt(Ptextfield.getText());
@@ -1520,7 +1523,7 @@ public class Gui extends javax.swing.JFrame {
           jTextField2.setText("");
           jProgressBar1.setValue(0);
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton Card;
     private javax.swing.JTextField Ctextfield;
     private javax.swing.JButton Next;
