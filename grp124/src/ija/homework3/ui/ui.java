@@ -23,7 +23,7 @@ public class ui{
     private   Master universe;
     /**
      * Constructor.
-     * @param universe
+     * @param universe {@link Master} instance representing UI 
      */
     public ui(Master universe ) {
         this.universe=universe;
