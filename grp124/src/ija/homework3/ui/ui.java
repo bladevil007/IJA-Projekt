@@ -12,7 +12,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/**
+ * Public class ui representing text unit interface<br> 
+ * used for debug.
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
+ */
 public class ui{
     private boolean New=false;
     private   Master universe;

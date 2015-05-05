@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 /**
  * Class implements object Gamer.
- * @author Norbert Durcansky,Jan Jusko
- * 
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class Gamer implements java.io.Serializable {
     /**

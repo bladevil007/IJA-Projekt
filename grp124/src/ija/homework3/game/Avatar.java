@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *Class implements object Avatar,
+ *Class implements object Avatar, <br>
  * each player has his own avatar
- * @author Norbert Durcansky,Jan Jusko
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class Avatar implements java.io.Serializable {
  /**
@@ -17,6 +18,9 @@ public class Avatar implements java.io.Serializable {
   * array of colors
   */
  static public ArrayList<String> names=new ArrayList<>();
+    /**
+    * Function create new  {@link Avatar} instance representing player's avatar and his color  
+    */
     public void  create()
     {
         /**

@@ -7,8 +7,8 @@ import ija.homework3.board.MazeField;
 import java.util.Collections;
 /**
  * Class implements object Game which includes game board and players.
- * @author Norbert Durcansky,Jan Jusko
- * 
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class Game implements java.io.Serializable {
 
@@ -110,7 +110,7 @@ public class Game implements java.io.Serializable {
         leader=group.get(0);
    }
    /**
-    * add the leader to the the of the {@linkplain group} and setup the new leader
+    * add the leader to the the of the group and setup the new leader
     */
    public void  Endturn()
    {

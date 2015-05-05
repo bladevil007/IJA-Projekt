@@ -30,7 +30,8 @@ import java.awt.Font;
 
 /**
  * Class implements graphical unit interface for the {@link Game}
- * @author Norbert Durcansky ,Jan Jusko 
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class Gui extends javax.swing.JFrame {
     /**
