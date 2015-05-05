@@ -35,10 +35,10 @@ public class Master {
      * Method saves all the progress on current game to the file.
      * creates .sav file
      * @param file save current game to this file
-     * @throws IOException
-     * @see IOException
-     * @throws ClassNotFoundException 
-     * @see ClassNotFoundException
+     * @throws IOException the exception
+     * @see IOException  the exception
+     * @throws ClassNotFoundException the exception
+     * @see ClassNotFoundException the exception
      */
   public void save(String file) throws IOException, ClassNotFoundException  { 
       

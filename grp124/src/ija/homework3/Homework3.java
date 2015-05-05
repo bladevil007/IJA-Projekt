@@ -17,30 +17,18 @@ public class Homework3 {
      * Function Main of whole project.
      * Starts the Gui main class.
      * woooo!
-     * @param args 
+     * @param args the command line arguments
      */
      public static void main(String[] args) {
 
          // Gamegui gameg=new Gamegui();
-        //  gameg.create();
-          
-          
-         
+        //  gameg.create();  
       // Master universe=Master.create();
-         
         Gui.main(args);
         //ui textUI = new ui(universe);
       // textUI.start();
     
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     
 }

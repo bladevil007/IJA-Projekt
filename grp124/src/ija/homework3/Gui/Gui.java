@@ -736,18 +736,34 @@ public class Gui extends javax.swing.JFrame {
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         // TODO add your handling code here:
         // store values into the variables 
-        if (Ntextfield.getText() == ""){
-            boardsize = 7;
-        }
-        try{
-                boardsize = Integer.parseInt(Ntextfield.getText())+2;
+        if ("".equals(Ntextfield.getText()))
+        {
+            boardsize = 9; //7+2
+            try
+            {
                 players = Integer.parseInt(Ptextfield.getText());
                 cards = Integer.parseInt(Ctextfield.getText());
-            }
-        catch(Exception e)
+
+
+            }catch(Exception e)
             {
                 return;
             }
+
+        }
+        else{
+
+            try{
+                    boardsize = Integer.parseInt(Ntextfield.getText())+2;
+                    players = Integer.parseInt(Ptextfield.getText());
+                    cards = Integer.parseInt(Ctextfield.getText());
+                }
+            catch(Exception e)
+                {
+                    return;
+                }
+            
+        }
         if(boardsize-2 > 11 || boardsize-2 < 5 || (boardsize-2)%2==0){
             return;
         }
