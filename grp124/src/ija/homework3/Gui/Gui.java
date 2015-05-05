@@ -1224,7 +1224,6 @@ public class Gui extends javax.swing.JFrame {
                     Image cardx = imgx.getScaledInstance(size,size,  java.awt.Image.SCALE_SMOOTH);   
                     label.setIcon(new ImageIcon(cardx));
                     
-
                 }
                 
             }
