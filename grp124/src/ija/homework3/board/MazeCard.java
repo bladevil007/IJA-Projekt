@@ -9,19 +9,42 @@ import ija.homework3.game.Gamer;
 import java.util.ArrayList;
 
 /**
- *
- * @author xdurca01
+ * Represents one abstract Card that stores the possible ways out.
+ * 
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class MazeCard  implements java.io.Serializable {
+    /**
+     * Enum type suitable for our use.
+     * Represents the possible ways out of the card.
+     */
     public static enum CANGO{
     LEFT,UP,RIGHT,DOWN
     }
+    /**
+     * List of cards.
+     */
     public  ArrayList<Gamer> stay=new ArrayList<>();
+    /**
+     * What is on the card?.
+     */
     public  char types;
+    /**
+     * The card is empty.
+     */
     public String Card="p";
     
+    /**
+     * Array representation of way out of one specific card.
+     */    
     public ArrayList<CANGO> cesta= new ArrayList<>();
 
+    /**
+     * Method to create card of specific type.
+     * @param type type of card needed.
+     * @return MazeCard
+     */
     public static MazeCard create(String type)
     {
         MazeCard kamen=new MazeCard();
@@ -52,7 +75,11 @@ public class MazeCard  implements java.io.Serializable {
      return kamen;
     }
     
-    
+    /**
+     * Method to check if it is possible to leave the card in specific direction.
+     * @param dir direction
+     * @return boolean
+     */
     public boolean canGo(MazeCard.CANGO dir)
     {
         for(int i=0;i<cesta.size();i++)
@@ -63,6 +90,11 @@ public class MazeCard  implements java.io.Serializable {
         return false;
     }
     
+     /**
+     * Method to rotate a card to the right.
+     * Rotate right!
+     * @param undo String of proccessed steps.
+     */
     public void turnRight(ArrayList<String> undo)
     {
     int i=0;
@@ -89,6 +121,10 @@ public class MazeCard  implements java.io.Serializable {
         i++;    
     }    
     } 
+    /**
+     * Method to rotate a card to the left.
+     * Rotate left!
+     */
      public void turnLeft()
     {
         int i=0;

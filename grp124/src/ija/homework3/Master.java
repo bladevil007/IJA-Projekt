@@ -13,13 +13,17 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- *
- * @author Noro
+ * Represents one game.
+ * Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class Master {
    public Game hra;
    
-    
+    /**
+     * Create new game.
+     * @return new game (Master)
+     */
     public static Master create()
     {
         Master universe=new Master();
@@ -27,7 +31,15 @@ public class Master {
         return universe;
     }
    
-    
+    /**
+     * Method saves all the progress on current game to the file.
+     * creates .sav file
+     * @param file save current game to this file
+     * @throws IOException
+     * @see IOException
+     * @throws ClassNotFoundException 
+     * @see ClassNotFoundException
+     */
   public void save(String file) throws IOException, ClassNotFoundException  { 
       
       try
@@ -39,6 +51,10 @@ public class Master {
       {
       }   
   }  
+  /**
+   * Method loads all the progress from specific game from the file.
+   * @param file load game from this file
+   */
   public void load(String file){
   
   try

@@ -12,8 +12,9 @@ import java.util.Collections;
 import java.util.Random;
 
 /**
- *
- * @author xdurca01
+ * Represents a playing board which consists of playing fields MazeField.
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class MazeBoard  implements java.io.Serializable {
   public  ArrayList<MazeField> board=new ArrayList<>();  //1d pole hracej plochy
@@ -21,7 +22,12 @@ public class MazeBoard  implements java.io.Serializable {
   public MazeCard special;
   public Cardpack balicek;
   public String cannot=""; // reverse shift is not allowed 
-
+/**
+   * This method calls the constructor of the class and creates a MazeBoard of size n as well as 
+   * generates appropriate number of MazeFields to add them to the board.
+   * @param n Size of board
+   * @return MazeBoard
+   */
    public static MazeBoard createMazeBoard(int n)
    {
        MazeBoard hra=new MazeBoard();
@@ -44,7 +50,13 @@ public class MazeBoard  implements java.io.Serializable {
        
    return hra;
    }
-   
+   /**
+    * Method creates a new game by creating a new card pack and places all the cards on 
+    * fields.
+    * All has to be done according to rules of game, so lots of conditions inside.
+    * Also generates one free card.
+    * @param K Number of Cards to be created.
+    */
     public void newGame(int K)
     {  
     balicek=new Cardpack();
@@ -167,6 +179,13 @@ public class MazeBoard  implements java.io.Serializable {
       }
 
     } 
+    /**
+     * Method does the initial rotation before initializing the game.
+     * Rotate the card before game according to the rules.
+     * @param l Number of rows
+     * @param k Number of cols
+     * @param kamen Card to be rotated
+     */
     public void shiftinit(int l,int k,MazeCard kamen)
     {
       if(l==1 && k==1)
@@ -210,18 +229,35 @@ public class MazeBoard  implements java.io.Serializable {
            }
        }
     } 
+    /**
+     * Simple getter of MazeField.
+     * Return a field from board on specific position.
+     * @param r Row
+     * @param c Col
+     * @return MazeField
+     */
     public MazeField get(int r, int c )
     {
         if(r*c<=sizeofgame*sizeofgame)
             return board.get((sizeofgame*(r-1))+(c-1));  
     return null;
     }
-    
+    /**
+     * Get current free card.
+     * @return MazeCard
+     */
     public MazeCard getFreeCard()
     {
     return special;
     }
-    
+    /**
+     * Return specific integer according to maximum value of parameters.
+     * Return 0,1,2 according to which one of the parameters is maximum.
+     * @param L int
+     * @param I int
+     * @param T int
+     * @return int
+     */
     public int max(int L, int I, int T)
     {
         if(L<=I)
@@ -238,6 +274,14 @@ public class MazeBoard  implements java.io.Serializable {
             else return 2;
         }  
     }
+    /**
+     * Method responsible for Shifting the fields through the board.
+     * Method takes the field and shifts it into the board on specific position.
+     * There is need to do several assertions.
+     * @param mf MazeField
+     * @param undo String of past game steps
+     * @param backtrack boolean value, if want to go back
+     */
     public void shift(MazeField mf,ArrayList<String> undo,boolean backtrack)
     {
         

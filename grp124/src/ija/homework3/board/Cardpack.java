@@ -10,13 +10,21 @@ import java.util.Collections;
 import java.util.Random;
 
 /**
- *
- * @author Noro
+ * Represents pack of playing cards.
+ * The pack is generated randomly.
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class Cardpack implements java.io.Serializable {
     public  ArrayList<Card> pack=new ArrayList<>();
     public  ArrayList<Card> packonboard=new ArrayList<>();
-
+/**
+ * Constructor of the class, creates and fills a random
+ * card pack with following parameters:
+ * @param size Initial number of cards
+ * @param limit Maximum number of cards
+ * @return Cardpack (pack of cards)
+ */
     public static   Cardpack create(int size,int limit)
     {
         Random random=new Random();
@@ -62,7 +70,10 @@ public class Cardpack implements java.io.Serializable {
         Collections.shuffle(balik.pack);
         return balik;
    }
-   
+   /**
+    * Method removes the front card from the card pack if there is any card left.
+    * @return Nothing
+    */
    public Card Givemecard()
    {
         if(pack.size()>0)

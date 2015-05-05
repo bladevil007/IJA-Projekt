@@ -5,14 +5,18 @@ import ija.homework3.ui.ui;
 import javax.swing.JFrame;
 
 /**
- *
- * @author Noro
+ * Main class.
+ * Name stayed from the third assignment. We are sorry it is misleading.
+ * @author Norbert Durcansky (xdurca01)<br>
+ *         Jan Jusko (xjusko00)
  */
 public class Homework3 {
     
 
     /**
-     * Function Main
+     * Function Main of whole project.
+     * Starts the Gui main class.
+     * woooo!
      * @param args 
      */
      public static void main(String[] args) {
