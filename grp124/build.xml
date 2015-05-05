@@ -1,0 +1,66 @@
+<project name="ija2015-client" basedir="." default="main">
+
+    <property name="build.dir"   value="build"/>
+    <property name="dest.dir"    value="dest-client"/>
+    <property name="doc.dir"     value="doc"/>
+    <property name="lib.dir"     value="lib"/>
+    <property name="src.dir"     value="src"/>
+    <property name="gfx.dir"     value="lib/objects"/>
+    
+    <!-- definicia hlavnej triedy -->
+    <property name="main-class" value="ija.homework3.Homework3" />
+    
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+    
+    <path id="application" location="${dest.dir}/${ant.project.name}.jar" />
+    
+    <!-- ant clean -->
+    <target name="clean">
+        <!-- vymaz vsetko co tam uz bolo -->
+        <delete dir="${doc.dir}"/>
+        <delete dir="${build.dir}"/>
+        <delete dir="${dest.dir}"/>
+        <!-- vytvor priecinky nanovo -->
+        <mkdir dir="${doc.dir}" />
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${dest.dir}" />
+    </target>
+    
+    <!-- ant build (kompiluje triedy) -->
+    <target name="build">
+        <mkdir dir="${build.dir}" />
+        <javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}" />
+    </target>
+    
+    <!-- ant jar (vytvori .jar file) -->
+    <target name="jar">
+        <mkdir dir="${dest.dir}" />
+        <jar jarfile="${dest.dir}/${ant.project.name}.jar" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+            
+            <fileset dir="${gfx.dir}">
+                <include name="**/*.png" />
+            </fileset>          
+        </jar>          
+    </target>
+    
+    <!-- ant doc (generuj dokumentaciu) -->
+    <target name="doc">
+        <javadoc sourcepath="${src.dir}" destdir="${doc.dir}" />
+    </target>
+    
+    <!-- ant run (spusti aplikaciu) -->
+    <target name="run">
+        <java jar="${dest.dir}/${ant.project.name}.jar" fork="true"/>
+    </target>
+    
+    <target name="compile" depends="clean, build,jar,doc" />    
+    <target name="main" depends="clean,build,jar,doc" />    
+    
+    <description>Builds and runs project ija2015-client.</description>
+</project>
+
