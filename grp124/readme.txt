@@ -1,4 +1,4 @@
-Projekt do predmetu Seminár Java (IJA) akademický rok 2014/2015.
+Projekt do predmetu Seminár Java (IJA), akademický rok 2014/2015.
 
 Názov aplikácie: Labyrinth
 
