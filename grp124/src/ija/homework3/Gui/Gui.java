@@ -1298,6 +1298,8 @@ public class Gui extends javax.swing.JFrame {
    */
    private void refreshboard()
    {
+       panel1.setVisible(true);
+       panel2.setVisible(true);	
        panel1.removeAll();
        labels.removeAll(labels);
        panel2.removeAll();
