@@ -7,6 +7,7 @@ package ija.homework3.board;
 
 import ija.homework3.game.Gamer;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Represents one abstract Card that stores the possible ways out.
@@ -147,6 +148,5 @@ public class MazeCard  implements java.io.Serializable {
                 }
             i++;    
         }    
-    } 
-  
+    }     
 }

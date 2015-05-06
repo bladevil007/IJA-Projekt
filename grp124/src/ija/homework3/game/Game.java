@@ -153,8 +153,7 @@ public class Game implements java.io.Serializable {
           for (int j = 1; j <= board.sizeofgame; j++) {
               MazeField a = board.get(i,j);
               MazeCard b =a.getCard();  
- 
-              if(b==leader.position)
+              if(b.equals(leader.position))
               {
                     /** if object on my position is same then increment the score*/
                     if(leader.position.Card.equals(leader.karta.types))
@@ -194,7 +193,7 @@ public class Game implements java.io.Serializable {
               {
                   MazeField a = board.get(i,j);
                   MazeCard b =a.getCard();  
-                  if(b==leader.position)
+                  if(b.equals(leader.position))
                   {
                      if(j!=board.sizeofgame)
                      {
@@ -241,12 +240,11 @@ public class Game implements java.io.Serializable {
 if(leader.undo.size()>0  && undo==false && (leader.undo.get(leader.undo.size()-1)=="right" || leader.undo.get(leader.undo.size()-1)=="rightx"))
     return;
 
-
     for(int i = 1; i <= board.sizeofgame; i++){
           for (int j = 1; j <= board.sizeofgame; j++) {
               MazeField a = board.get(i,j);
               MazeCard b =a.getCard();  
-              if(b==leader.position)
+              if(b.equals(leader.position))
               {
 		
                  if(j!=1)
@@ -293,7 +291,7 @@ if(leader.undo.size()>0  && undo==false && (leader.undo.get(leader.undo.size()-1
           for (int j = 1; j <= board.sizeofgame; j++) {
               MazeField a = board.get(i,j);
               MazeCard b =a.getCard();  
-              if(b==leader.position)
+              if(b.equals(leader.position))
               {
                  if(i!=1)
                  {
@@ -339,7 +337,7 @@ if(leader.undo.size()>0  && undo==false && (leader.undo.get(leader.undo.size()-1
           for (int j = 1; j <= board.sizeofgame; j++) {
               MazeField a = board.get(i,j);
               MazeCard b =a.getCard();  
-              if(b==leader.position)
+              if(b.equals(leader.position))
               {
                  if(i!=board.sizeofgame)
                  {
