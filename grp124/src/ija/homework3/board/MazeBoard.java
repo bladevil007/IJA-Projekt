@@ -318,7 +318,7 @@ public class MazeBoard  implements java.io.Serializable {
                MazeCard co2=kam2.getCard();
                kam2.putCard(co1);   
        }
-       special.stay=(ArrayList<Gamer>)lastx.stay.clone();
+       special.stay=new ArrayList<Gamer>(lastx.stay);
        lastx.stay.clear();
        novyspeacialx.putCard(special);
        special=lastx;        
@@ -340,7 +340,7 @@ public class MazeBoard  implements java.io.Serializable {
                MazeCard co2=kam2.getCard();
                kam1.putCard(co2);   
        }
-       special.stay=(ArrayList<Gamer>)lastx.stay.clone();
+       special.stay=new ArrayList<Gamer>(lastx.stay);
        lastx.stay.clear();
        novyspeacialx.putCard(special);
        special=lastx;  
@@ -361,7 +361,7 @@ public class MazeBoard  implements java.io.Serializable {
                MazeCard co2=kam2.getCard();
                kam2.putCard(co1);   
        }
-       special.stay=(ArrayList<Gamer>)lastx.stay.clone();
+       special.stay=new ArrayList<Gamer>(lastx.stay);
        lastx.stay.clear();
        novyspeacialx.putCard(special);
        special=lastx;        
@@ -382,7 +382,7 @@ public class MazeBoard  implements java.io.Serializable {
                MazeCard co2=kam2.getCard();
                kam1.putCard(co2);   
        }
-       special.stay=(ArrayList<Gamer>)lastx.stay.clone();
+       special.stay=new ArrayList<Gamer>(lastx.stay);
        lastx.stay.clear();
        novyspeacialx.putCard(special);
        special=lastx;       

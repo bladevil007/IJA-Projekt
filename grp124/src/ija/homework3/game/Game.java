@@ -241,16 +241,19 @@ public class Game implements java.io.Serializable {
 if(leader.undo.size()>0  && undo==false && (leader.undo.get(leader.undo.size()-1)=="right" || leader.undo.get(leader.undo.size()-1)=="rightx"))
     return;
 
+
     for(int i = 1; i <= board.sizeofgame; i++){
           for (int j = 1; j <= board.sizeofgame; j++) {
               MazeField a = board.get(i,j);
               MazeCard b =a.getCard();  
               if(b==leader.position)
               {
+		
                  if(j!=1)
                  {
                     MazeField where = board.get(i,j-1); 
                     MazeCard move =where.getCard();
+
                      if( move.canGo(MazeCard.CANGO.RIGHT)&&  b.canGo(MazeCard.CANGO.LEFT))       
                      {   
                          move.stay.add(leader);
